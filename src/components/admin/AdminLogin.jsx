@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
-import { Lock, User, AlertCircle, Waves } from 'lucide-react'
+import { Lock, User, AlertCircle, Waves, ArrowLeft, Home } from 'lucide-react'
 
 const AdminLogin = () => {
   const [credentials, setCredentials] = useState({
@@ -49,6 +49,17 @@ const AdminLogin = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-md">
+        {/* Back to Home Button */}
+        <div className="mb-6">
+          <button
+            onClick={() => window.location.href = '/'}
+            className="flex items-center space-x-2 text-white/80 hover:text-white transition-colors duration-200 group"
+          >
+            <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform duration-200" />
+            <span className="text-sm font-medium">Back to Home</span>
+          </button>
+        </div>
+
         {/* Logo and Title */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
