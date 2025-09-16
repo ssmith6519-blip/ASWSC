@@ -10,6 +10,7 @@ const Header = ({ activeSection, onNavigate }) => {
   const navigationItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'features', label: 'Features' },
     { id: 'tournaments', label: 'Tournaments' },
     { id: 'resources', label: 'Resources' },
     { id: 'faq', label: 'FAQ' },

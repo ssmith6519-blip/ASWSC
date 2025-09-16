@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import Features from './components/Features'
 import Tournaments from './components/Tournaments'
 import Resources from './components/Resources'
 import FAQ from './components/FAQ'
@@ -77,6 +78,10 @@ const AppContent = () => {
         
         <section id="about">
           <About />
+        </section>
+        
+        <section id="features">
+          <Features />
         </section>
         
         <section id="tournaments">
