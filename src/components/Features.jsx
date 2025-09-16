@@ -21,7 +21,9 @@ import {
   Download,
   ExternalLink,
   Waves,
-  HelpCircle
+  HelpCircle,
+  Image,
+  Video
 } from 'lucide-react'
 
 const Features = () => {
@@ -92,6 +94,11 @@ const Features = () => {
             name: 'FAQ Section',
             description: 'Frequently asked questions about membership and tournaments',
             icon: HelpCircle
+          },
+          {
+            name: 'Blog Articles',
+            description: 'Read fishing tips, trip reports, gear guides, and safety posts with images and videos',
+            icon: FileText
           },
           {
             name: 'Contact Information',
@@ -286,6 +293,21 @@ const Features = () => {
         icon: FileText,
         items: [
           {
+            name: 'Blog Management',
+            description: 'Create, edit, approve, and publish member-submitted blog posts with media',
+            icon: Edit
+          },
+          {
+            name: 'Media Library',
+            description: 'Upload and manage images and videos with inline insertion into posts',
+            icon: Image
+          },
+          {
+            name: 'Image Editor',
+            description: 'Annotate images with drawing tools, shapes, text, colors, zoom and undo/redo',
+            icon: Image
+          },
+          {
             name: 'FAQ Management',
             description: 'Full CRUD operations for website FAQs with ordering and status',
             icon: HelpCircle
@@ -456,6 +478,14 @@ const Features = () => {
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Flexible Configuration</h4>
               <p className="text-sm text-gray-600">Customizable scoring matrices, templates, and system settings</p>
+            </div>
+
+            <div className="text-center">
+              <div className="p-3 bg-purple-100 rounded-full w-fit mx-auto mb-3">
+                <Video className="h-8 w-8 text-purple-600" />
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2">Rich Blog Platform</h4>
+              <p className="text-sm text-gray-600">Member posts with images, videos, and admin approval workflow</p>
             </div>
           </div>
         </div>

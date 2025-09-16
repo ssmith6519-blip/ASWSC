@@ -34,25 +34,27 @@ const AdminSidebar = ({ navigationItems, activeTab, onNavigate, onSwitchToPublic
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4">
-        <div className="space-y-2">
-          {navigationItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
-                activeTab === item.id
-                  ? 'bg-ocean-600 text-white'
-                  : 'text-gray-300 hover:bg-gray-800 hover:text-white'
-              }`}
-            >
-              <item.icon className="h-5 w-5" />
-              <div>
-                <div className="font-medium">{item.name}</div>
-                <div className="text-xs opacity-75">{item.description}</div>
-              </div>
-            </button>
-          ))}
+      <nav className="flex-1 overflow-y-auto">
+        <div className="p-4">
+          <div className="space-y-2">
+            {navigationItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => onNavigate(item.id)}
+                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
+                  activeTab === item.id
+                    ? 'bg-ocean-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                }`}
+              >
+                <item.icon className="h-5 w-5 flex-shrink-0" />
+                <div className="min-w-0">
+                  <div className="font-medium truncate">{item.name}</div>
+                  <div className="text-xs opacity-75 truncate">{item.description}</div>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 

@@ -4,6 +4,8 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Features from './components/Features'
+import Blog from './components/Blog'
+import BlogEditor from './components/BlogEditor'
 import Tournaments from './components/Tournaments'
 import Resources from './components/Resources'
 import FAQ from './components/FAQ'
@@ -16,6 +18,7 @@ import AdminDashboard from './components/admin/AdminDashboard'
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState('home')
   const [showAdminLogin, setShowAdminLogin] = useState(false)
+  const [showBlogEditor, setShowBlogEditor] = useState(false)
   const [currentView, setCurrentView] = useState('public') // 'public' or 'admin'
   const { user, loading, isAdmin } = useAuth()
 
@@ -68,8 +71,12 @@ const AppContent = () => {
 
   // Show main public website
   return (
-    <div className="min-h-screen bg-gradient-to-b from-ocean-50 to-white">
-      <Header activeSection={activeSection} onNavigate={scrollToSection} />
+      <div className="min-h-screen bg-gradient-to-b from-ocean-50 to-white">
+        <Header 
+          activeSection={activeSection} 
+          onNavigate={scrollToSection} 
+          onShowBlogEditor={() => setShowBlogEditor(true)} 
+        />
       
       <main>
         <section id="home">
@@ -82,6 +89,10 @@ const AppContent = () => {
         
         <section id="features">
           <Features />
+        </section>
+
+        <section id="blog">
+          <Blog />
         </section>
         
         <section id="tournaments">
@@ -102,6 +113,11 @@ const AppContent = () => {
       </main>
       
       <Footer onNavigate={scrollToSection} />
+
+      {/* Blog Editor Modal */}
+      {showBlogEditor && (
+        <BlogEditor onClose={() => setShowBlogEditor(false)} />
+      )}
     </div>
   )
 }

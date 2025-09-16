@@ -11,7 +11,8 @@ import ScoringMatrixManagement from './ScoringMatrixManagement'
 import TestDataManagement from './TestDataManagement'
 import FAQManagement from './FAQManagement'
 import EmailManagement from './EmailManagement'
-import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database, HelpCircle, Mail } from 'lucide-react'
+import BlogManagement from './BlogManagement'
+import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database, HelpCircle, Mail, BookOpen } from 'lucide-react'
 
 const AdminDashboard = ({ onSwitchToPublic }) => {
   const { user, logout } = useAuth()
@@ -68,6 +69,12 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       name: 'Email Management',
       icon: Mail,
       description: 'Configure Gmail integration and send member communications'
+    },
+    {
+      id: 'blog',
+      name: 'Blog Management',
+      icon: BookOpen,
+      description: 'Manage blog posts, categories, and member submissions'
     },
     {
       id: 'settings',
@@ -172,6 +179,9 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       
       case 'email':
         return <EmailManagement />
+
+      case 'blog':
+        return <BlogManagement />
       
       case 'settings':
         return (

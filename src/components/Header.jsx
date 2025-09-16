@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Menu, X, Settings, LogOut } from 'lucide-react'
+import { Menu, X, Settings, LogOut, Edit3 } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
-const Header = ({ activeSection, onNavigate }) => {
+const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const { isAdmin, logout } = useAuth()
@@ -11,6 +11,7 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'features', label: 'Features' },
+    { id: 'blog', label: 'Blog' },
     { id: 'tournaments', label: 'Tournaments' },
     { id: 'resources', label: 'Resources' },
     { id: 'faq', label: 'FAQ' },
@@ -94,35 +95,51 @@ const Header = ({ activeSection, onNavigate }) => {
             ))}
           </nav>
 
-          {/* Admin Controls (Desktop) */}
-          {isAdmin() && (
-            <div className="hidden lg:flex items-center space-x-3">
-              <button
-                onClick={() => onNavigate('admin')}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-ocean-600 hover:bg-gray-100' 
-                    : 'text-white hover:text-gray-200 hover:bg-white/10'
-                }`}
-                title="Admin Dashboard"
-              >
-                <Settings className="h-4 w-4" />
-                <span>Admin</span>
-              </button>
-              <button
-                onClick={logout}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-red-600 hover:bg-gray-100' 
-                    : 'text-white hover:text-red-200 hover:bg-white/10'
-                }`}
-                title="Logout"
-              >
-                <LogOut className="h-4 w-4" />
-                <span>Logout</span>
-              </button>
-            </div>
-          )}
+          {/* User Actions (Desktop) */}
+          <div className="hidden lg:flex items-center space-x-3">
+            {/* Write Blog Button for all users */}
+            <button
+              onClick={() => onShowBlogEditor && onShowBlogEditor()}
+              className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
+                isScrolled
+                  ? 'bg-ocean-600 text-white hover:bg-ocean-700'
+                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+              }`}
+            >
+              <Edit3 className="h-4 w-4" />
+              <span>Write Blog</span>
+            </button>
+            
+            {/* Admin Controls */}
+            {isAdmin() && (
+              <>
+                <button
+                  onClick={() => onNavigate('admin')}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-gray-700 hover:text-ocean-600 hover:bg-gray-100' 
+                      : 'text-white hover:text-gray-200 hover:bg-white/10'
+                  }`}
+                  title="Admin Dashboard"
+                >
+                  <Settings className="h-4 w-4" />
+                  <span>Admin</span>
+                </button>
+                <button
+                  onClick={logout}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-gray-700 hover:text-red-600 hover:bg-gray-100' 
+                      : 'text-white hover:text-red-200 hover:bg-white/10'
+                  }`}
+                  title="Logout"
+                >
+                  <LogOut className="h-4 w-4" />
+                  <span>Logout</span>
+                </button>
+              </>
+            )}
+          </div>
 
           {/* Mobile Menu Button */}
           <button
