@@ -10,7 +10,8 @@ import TournamentManagement from './TournamentManagement'
 import ScoringMatrixManagement from './ScoringMatrixManagement'
 import TestDataManagement from './TestDataManagement'
 import FAQManagement from './FAQManagement'
-import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database, HelpCircle } from 'lucide-react'
+import EmailManagement from './EmailManagement'
+import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database, HelpCircle, Mail } from 'lucide-react'
 
 const AdminDashboard = ({ onSwitchToPublic }) => {
   const { user, logout } = useAuth()
@@ -63,6 +64,12 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       description: 'Manage frequently asked questions for the website'
     },
     {
+      id: 'email',
+      name: 'Email Management',
+      icon: Mail,
+      description: 'Configure Gmail integration and send member communications'
+    },
+    {
       id: 'settings',
       name: 'Settings',
       icon: Settings,
@@ -95,7 +102,7 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Dashboard</h1>
               <p className="text-gray-600">Welcome back, {user.name}. Here's an overview of your club membership.</p>
             </div>
-            <MemberStats onCardClick={handleStatCardClick} />
+            <MemberStats onCardClick={handleStatCardClick} onNavigate={setActiveTab} />
           </div>
         )
       
@@ -162,6 +169,9 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       
       case 'faq':
         return <FAQManagement />
+      
+      case 'email':
+        return <EmailManagement />
       
       case 'settings':
         return (
