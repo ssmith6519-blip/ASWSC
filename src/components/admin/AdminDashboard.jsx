@@ -9,7 +9,8 @@ import MemberStats from './MemberStats'
 import TournamentManagement from './TournamentManagement'
 import ScoringMatrixManagement from './ScoringMatrixManagement'
 import TestDataManagement from './TestDataManagement'
-import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database } from 'lucide-react'
+import FAQManagement from './FAQManagement'
+import { Users, UserPlus, BarChart3, Settings, Trophy, Target, Database, HelpCircle } from 'lucide-react'
 
 const AdminDashboard = ({ onSwitchToPublic }) => {
   const { user, logout } = useAuth()
@@ -54,6 +55,12 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       name: 'Test Data',
       icon: Database,
       description: 'Load test weigh-in data for tournaments'
+    },
+    {
+      id: 'faq',
+      name: 'FAQ Management',
+      icon: HelpCircle,
+      description: 'Manage frequently asked questions for the website'
     },
     {
       id: 'settings',
@@ -152,6 +159,9 @@ const AdminDashboard = ({ onSwitchToPublic }) => {
       
       case 'testdata':
         return <TestDataManagement />
+      
+      case 'faq':
+        return <FAQManagement />
       
       case 'settings':
         return (
