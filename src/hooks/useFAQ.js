@@ -246,3 +246,5 @@ export const useFAQ = () => {
 }
 
 export default useFAQ
+
+

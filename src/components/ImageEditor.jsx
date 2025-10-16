@@ -534,3 +534,5 @@ const ImageEditor = ({ onSave, onClose, initialImage = null }) => {
 }
 
 export default ImageEditor
+
+

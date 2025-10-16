@@ -123,7 +123,7 @@ const Tournaments = () => {
 
   const handleViewRegistrationsClick = (tournamentId) => {
     setSelectedTournamentId(tournamentId)
-    setShowRegistrationList(tournamentId)
+    setShowRegistrationList(true)
   }
 
   const handleDetailsClick = (tournamentId) => {
@@ -257,10 +257,10 @@ const Tournaments = () => {
                 {registrationData.participants.totalBoats > 0 && (
                   <button 
                     onClick={() => handleViewRegistrationsClick(tournament.id)}
-                    className="bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm py-2 px-3 rounded flex items-center space-x-2"
+                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm py-2 px-3 rounded flex items-center space-x-2"
                   >
-                    <Trophy className="h-4 w-4" />
-                    <span>View Leaderboard</span>
+                    <Eye className="h-4 w-4" />
+                    <span>View Entries</span>
                   </button>
                 )}
                 {tournament.photoAlbumUrl && (
