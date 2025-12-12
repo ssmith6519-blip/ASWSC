@@ -25,11 +25,11 @@ const Hero = ({ onNavigate }) => {
         <div className="space-y-8">
           {/* Main Heading */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black leading-tight">
               Atlanta Saltwater
-              <span className="block text-sand-300">Sportsman's Club</span>
+              <span className="block text-orange-500">Sportsman's Club</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-gray-800 max-w-3xl mx-auto leading-relaxed">
               Georgia's premier saltwater fishing club connecting anglers, 
               sharing knowledge, and creating unforgettable fishing experiences
             </p>
@@ -38,19 +38,19 @@ const Hero = ({ onNavigate }) => {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <Users className="h-8 w-8 text-sand-300 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-white mb-1">500+</div>
-              <div className="text-gray-200 text-sm">Active Members</div>
+              <Users className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+              <div className="text-3xl font-bold text-black mb-1">500+</div>
+              <div className="text-gray-800 text-sm">Active Members</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <Trophy className="h-8 w-8 text-sand-300 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-white mb-1">25+</div>
-              <div className="text-gray-200 text-sm">Annual Tournaments</div>
+              <Trophy className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+              <div className="text-3xl font-bold text-black mb-1">25+</div>
+              <div className="text-gray-800 text-sm">Annual Tournaments</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <Calendar className="h-8 w-8 text-sand-300 mx-auto mb-2" />
-              <div className="text-3xl font-bold text-white mb-1">40+</div>
-              <div className="text-gray-200 text-sm">Years of Excellence</div>
+              <Calendar className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+              <div className="text-3xl font-bold text-black mb-1">40+</div>
+              <div className="text-gray-800 text-sm">Years of Excellence</div>
             </div>
           </div>
 
@@ -58,14 +58,14 @@ const Hero = ({ onNavigate }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => onNavigate('tournaments')}
-              className="group bg-sand-500 hover:bg-sand-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2"
+              className="group bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2"
             >
               <span>View Tournaments</span>
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button
               onClick={() => onNavigate('about')}
-              className="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-ocean-700 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="group bg-transparent border-2 border-black text-black hover:bg-black hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Learn More
             </button>

@@ -57,13 +57,13 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
             </div>
             <div className="flex flex-col">
               <span className={`font-bold text-lg lg:text-xl transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
-              } group-hover:text-ocean-600`}>
+                isScrolled ? 'text-gray-900' : 'text-black'
+              } group-hover:text-orange-600`}>
                 ASWSC
               </span>
               <span className={`text-xs lg:text-sm transition-colors duration-300 ${
-                isScrolled ? 'text-gray-600' : 'text-gray-200'
-              } group-hover:text-ocean-500`}>
+                isScrolled ? 'text-gray-600' : 'text-gray-800'
+              } group-hover:text-orange-500`}>
                 Atlanta Saltwater
               </span>
             </div>
@@ -75,20 +75,20 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-ocean-500 ${
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 hover:text-orange-500 ${
                   activeSection === item.id
                     ? isScrolled 
-                      ? 'text-ocean-600' 
-                      : 'text-white'
+                      ? 'text-orange-600' 
+                      : 'text-black'
                     : isScrolled 
-                      ? 'text-gray-700 hover:text-ocean-600' 
-                      : 'text-gray-200 hover:text-white'
+                      ? 'text-gray-700 hover:text-orange-600' 
+                      : 'text-gray-800 hover:text-black'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
                   <span className={`absolute bottom-0 left-0 right-0 h-0.5 transition-colors duration-300 ${
-                    isScrolled ? 'bg-ocean-600' : 'bg-white'
+                    isScrolled ? 'bg-orange-600' : 'bg-orange-500'
                   }`} />
                 )}
               </button>
@@ -102,8 +102,8 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
               onClick={() => onShowBlogEditor && onShowBlogEditor()}
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
                 isScrolled
-                  ? 'bg-ocean-600 text-white hover:bg-ocean-700'
-                  : 'bg-white/20 text-white hover:bg-white/30 backdrop-blur-sm'
+                  ? 'bg-orange-600 text-white hover:bg-orange-700'
+                  : 'bg-orange-500 text-white hover:bg-orange-600 backdrop-blur-sm'
               }`}
             >
               <Edit3 className="h-4 w-4" />
@@ -117,8 +117,8 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
                   onClick={() => onNavigate('admin')}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                     isScrolled 
-                      ? 'text-gray-700 hover:text-ocean-600 hover:bg-gray-100' 
-                      : 'text-white hover:text-gray-200 hover:bg-white/10'
+                      ? 'text-gray-700 hover:text-orange-600 hover:bg-gray-100' 
+                      : 'text-black hover:text-orange-600 hover:bg-orange-50'
                   }`}
                   title="Admin Dashboard"
                 >
@@ -130,7 +130,7 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
                   className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                     isScrolled 
                       ? 'text-gray-700 hover:text-red-600 hover:bg-gray-100' 
-                      : 'text-white hover:text-red-200 hover:bg-white/10'
+                      : 'text-black hover:text-red-600 hover:bg-red-50'
                   }`}
                   title="Logout"
                 >
@@ -146,8 +146,8 @@ const Header = ({ activeSection, onNavigate, onShowBlogEditor }) => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`lg:hidden p-2 rounded-md transition-colors duration-300 ${
               isScrolled 
-                ? 'text-gray-700 hover:text-ocean-600 hover:bg-gray-100' 
-                : 'text-white hover:text-gray-200 hover:bg-white/10'
+                ? 'text-gray-700 hover:text-orange-600 hover:bg-gray-100' 
+                : 'text-black hover:text-orange-600 hover:bg-orange-50'
             }`}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
